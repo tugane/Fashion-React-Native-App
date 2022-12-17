@@ -12,5 +12,7 @@ export default {
   primary: green,
   onPrimary: white,
   border: gray,
+  borderWithOpacity: "rgba(154,154,154,0.45)",
   secondary: yellow,
+  gray: gray,
 };

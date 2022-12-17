@@ -1,7 +1,19 @@
 import { ImageSourcePropType } from "react-native";
 import Colors from "../constants/Colors";
 
-interface Category {
+interface User {
+  id: number;
+  name: string;
+  image: ImageSourcePropType;
+}
+
+export const user: User = {
+  id: 1,
+  name: "John Doe",
+  image: require("../assets/images/user/avatar.png"),
+};
+
+export interface Category {
   id: number;
   name: string;
 }
@@ -40,6 +52,11 @@ const colors: Color[] = [
     code: Colors.text,
   },
 ];
+
+interface Size {
+  id: number;
+  name: string;
+}
 export interface Product {
   id: number;
   name: string;
@@ -49,8 +66,18 @@ export interface Product {
   image: ImageSourcePropType;
   reviews: number;
   rating: number;
+  brand: string;
   colors: Color[];
+  sizes: Size[];
 }
+
+const sizes: Size[] = [
+  { id: 1, name: "S" },
+  { id: 2, name: "M" },
+  { id: 3, name: "L" },
+  { id: 4, name: "XL" },
+  { id: 5, name: "XXL" },
+];
 
 export const products: Product[] = [
   {
@@ -64,6 +91,8 @@ export const products: Product[] = [
     reviews: 80,
     rating: 2.5,
     colors: colors,
+    brand: "Zara",
+    sizes,
   },
   {
     id: 2,
@@ -76,6 +105,8 @@ export const products: Product[] = [
     reviews: 28,
     rating: 3.7,
     colors: colors,
+    brand: "Zara",
+    sizes,
   },
   {
     id: 3,
@@ -88,6 +119,8 @@ export const products: Product[] = [
     reviews: 70,
     rating: 5,
     colors: colors,
+    brand: "Zara",
+    sizes,
   },
   {
     id: 4,
@@ -96,9 +129,11 @@ export const products: Product[] = [
     category: categories[1],
     description:
       "Lorem ipsum dolor sit amet consectetur. Odio hendrerit vitae nibh elementum egestas. Duis eleifend turpis tempor purus et aliquam dui risus dui.",
-    image: require("../assets/images/products/blue-ish w.jpg"),
+    image: require("../assets/images/products/blue-ish-w.jpg"),
     reviews: 65,
     rating: 4.2,
     colors: colors,
+    brand: "Zara",
+    sizes,
   },
 ];
